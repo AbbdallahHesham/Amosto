@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amosto_Glam</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header>Amosto_Glam</header>
+<!-- اللوجو Full Screen -->
+<header class="hero">
+    <img src="WhatsApp Image 2026-03-2910 at 7.43.32 PM.jpeg" alt="Amosto Logo">
+</header>
+
+<!-- باقي الموقع -->
+<section class="content">
+
+    <div class="note">
+        30% Deposit
+    </div>
+
+    <div class="filters">
+        <button onclick="filter('all')">All</button>
+        <button onclick="filter('chain')">Chains</button>
+        <button onclick="filter('ring')">Rings</button>
+        <button onclick="filter('bracelet')">Bracelets</button>
+    </div>
+
+    <div class="container">
+        <div class="products">
+
+            <div class="product chain">
+                <img src="WhatsApp Image 2026-03-299at 7.01.48 PM.jpeg">
+                <h3>Stylish Chain</h3>
+                <p class="price">190 EGP</p>
+                <button class="order" onclick="order('Stylish Chain',190)">Order Now</button>
+            </div>
+
+            <div class="product ring">
+                <img src="WhatsApp Image 2026-03-29999 at 7.01.48 PM.jpeg">
+                <h3>Elegant Ring</h3>
+                <p class="price">150 EGP</p>
+                <button class="order" onclick="order('Elegant Ring',150)">Order Now</button>
+            </div>
+
+            <div class="product bracelet">
+                <img src="WhatsApp Image 2026-03-29 at 7.01.48 PM.jpeg">
+                <h3>Soft Bracelet</h3>
+                <p class="price">160 EGP</p>
+                <button class="order" onclick="order('Soft Bracelet',160)">Order Now</button>
+            </div>
+
+            <div class="product bracelet">
+                <img src="WhatsApp Image 2026-03-2999 at 7.01.48 PM.jpeg">
+                <h3>Premium Bracelet</h3>
+                <p class="price">180 EGP</p>
+                <button class="order" onclick="order('Premium Bracelet',180)">Order Now</button>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<script>
+function order(product, price) {
+    let deposit = Math.round(price * 0.3);
+    let phone = "2001153869456";
+
+    let message = `Hello, I want to order ${product}
+Price: ${price} EGP
+Deposit: ${deposit} EGP`;
+
+    let url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+}
+
+function filter(category) {
+    let items = document.querySelectorAll('.product');
+
+    items.forEach(item => {
+        if (category === 'all') {
+            item.style.display = 'block';
+        } else {
+            item.style.display = item.classList.contains(category) ? 'block' : 'none';
+        }
+    });
+}
+</script>
+
+</body>
+</html>

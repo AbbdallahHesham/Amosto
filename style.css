@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f5f5f5;
+}
+
+/* ✅ اللوجو Full Screen */
+.hero {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.hero img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+}
+
+header {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* محتوى الموقع بعد اللوجو */
+.content {
+    padding-top: 20px;
+}
+
+.note {
+    text-align: center;
+    margin: 15px;
+    color: #555;
+    font-weight: bold;
+}
+
+.filters {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.filters button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    background: #ddd;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.filters button:hover {
+    background: black;
+    color: white;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+/* ✅ خليها Grid بس من غير ما تكبر العناصر */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
+    justify-content: center; /* يمنع التمدد */
+    gap: 20px;
+}
+
+.product {
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+}
+
+.product img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* يخلي الصور مظبوطة */
+    border-radius: 10px;
+}
+
+.price {
+    color: #888;
+    margin: 10px 0;
+}
+
+.order {
+    background: black;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.order:hover {
+    background: #444;
+}
